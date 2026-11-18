@@ -1,0 +1,25 @@
+{
+  "name": "ai-canary",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Cloudflare Worker that turns any URL into a tracked source link. Logs AI/bot/browser fetches server-side and redirects the visitor.",
+  "main": "worker.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail",
+    "db:create": "wrangler d1 create ai-canary",
+    "db:apply:local": "wrangler d1 execute ai-canary --local --file=schema.sql",
+    "db:apply:remote": "wrangler d1 execute ai-canary --remote --file=schema.sql",
+    "db:query": "wrangler d1 execute ai-canary --remote --command",
+    "db:read": "node scripts/db-read.mjs",
+    "logs": "wrangler d1 execute ai-canary --remote --command \"SELECT * FROM hits ORDER BY id DESC LIMIT 200\""
+  },
+  "devDependencies": {
+    "wrangler": "^4"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "workerd@1.20261117.1": true
+  }
+}

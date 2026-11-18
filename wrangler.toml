@@ -1,0 +1,8 @@
+name = "cdn-assets"
+main = "worker.js"
+compatibility_date = "2026-01-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "ai-canary"
+database_id = "bbc8086b-2b6d-4d3f-a2cb-49b059f9bd0c"

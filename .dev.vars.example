@@ -1,0 +1,5 @@
+# Copy or rename this file to .dev.vars and fill in values for LOCAL testing only
+# `wrangler dev` reads .dev.vars automatically
+# Add to .gitignore `.dev.vars` and NEVER commit .dev.vars
+
+# REDIRECT_WHITELIST=https://example.com/page
